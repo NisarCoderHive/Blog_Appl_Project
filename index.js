@@ -14,11 +14,6 @@ app.use(engine);
 
 app.set('views',`${__dirname}/views`);
 
-//console.log(`${__dirname}/views`);
-/*app.get('/index.html', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'pages/index.html'));
-});*/
-
 app.get('/',(req,res)=>{
     res.render('index');
 })
