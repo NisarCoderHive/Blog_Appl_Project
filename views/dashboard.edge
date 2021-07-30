@@ -1,4 +1,11 @@
 @layout('layouts.app')
+@section('headuser')
+ 
+<li class="nav-item">
+    <a class="nav-link px-lg-3 py-3 py-lg-4" href="/newPost">New Post</a></li>
+<li class="nav-item">
+    <a class="nav-link px-lg-3 py-3 py-lg-4" href="/loginUser">Logout</a></li>
+@endsection
 
 @section('content')
 <!-- Page Header -->
@@ -31,19 +38,10 @@
            
           <span class="meta">
             {{post.description}}
-          </span><BR>
-            <span class="meta">
-              Author : {{post.author}}
-             </span> &nbsp ;
-          <span class="meta">
-           Date Posted: {{post.postingdate.toLocaleDateString()}}
-          </span>  
-
-
-        @if(user && user.username === post.author )
+            
+        </span>
         <BR><a class ="btn btn-outline-secondary btn-sm mt-2"  style="border-radius: .2rem;" href="/deletepost/{{ post.title }}">delete </a>
-        &nbsp; <a class ="btn btn-outline-secondary btn-sm mt-2" href="/editpost/{{ post.title }}"  style="border-radius: .2rem;">edit </a>
-        @endif
+          &nbsp; <a class ="btn btn-outline-secondary btn-sm mt-2" href="/editpost/{{ post.title }}">edit </a>
         </div>
         <hr>
       @endeach
